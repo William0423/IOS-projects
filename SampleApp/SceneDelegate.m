@@ -1,4 +1,5 @@
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -11,6 +12,56 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    
+//        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds] ];
+//
+//        UITabBarController *tabbarController = [[UITabBarController alloc] init];
+//
+//        UIViewController *controller1 = [[UIViewController alloc] init];
+//        controller1.view.backgroundColor = [UIColor redColor];
+//
+//        UIViewController *controller2 = [[UIViewController alloc] init];
+//        controller2.view.backgroundColor = [UIColor yellowColor];
+//
+//
+//        UIViewController *controller3 = [[UIViewController alloc] init];
+//        controller3.view.backgroundColor = [UIColor greenColor];
+//
+//
+//        UIViewController *controller4 = [[UIViewController alloc] init];
+//        controller4.view.backgroundColor = [UIColor lightGrayColor];
+//
+//        [tabbarController setViewControllers:@[controller1,controller2,controller3,controller4]];
+//
+//        self.window.rootViewController = tabbarController;
+//        [self.window makeKeyAndVisible];
+    
+    
+    self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+
+    UIViewController *controller1 = [[UIViewController alloc] init];
+    controller1.view.backgroundColor = [UIColor redColor];
+    controller1.tabBarItem.title = @"经济";
+
+    UIViewController *controller2 = [[UIViewController alloc] init];
+    controller2.view.backgroundColor = [UIColor greenColor];
+    controller2.tabBarItem.title = @"政治";
+
+    UIViewController *controller3 = [[UIViewController alloc] init];
+    controller3.view.backgroundColor = [UIColor blueColor];
+    controller3.tabBarItem.title = @"科技";
+
+    UIViewController *controller4 = [[UIViewController alloc] init];
+    controller4.view.backgroundColor = [UIColor yellowColor];
+    controller4.tabBarItem.title = @"文化";
+
+    [tabbarController setViewControllers:@[controller1, controller2, controller3, controller4]];
+
+    self.window.rootViewController = tabbarController;
+    [self.window makeKeyAndVisible];
+
 }
 
 
