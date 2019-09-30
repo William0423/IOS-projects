@@ -40,10 +40,18 @@
     
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
     UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    
+    // lesson 10 :
+    ViewController *viewController = [[ViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 
-    UIViewController *controller1 = [[UIViewController alloc] init];
-    controller1.view.backgroundColor = [UIColor redColor];
-    controller1.tabBarItem.title = @"经济";
+//    UIViewController *controller1 = [[UIViewController alloc] init];
+    navigationController.view.backgroundColor = [UIColor whiteColor];
+    navigationController.tabBarItem.title = @"经济";
+    
+//    UIViewController *controller1 = [[UIViewController alloc] init];
+//    controller1.view.backgroundColor = [UIColor redColor];
+//    controller1.tabBarItem.title = @"经济";
 
     UIViewController *controller2 = [[UIViewController alloc] init];
     controller2.view.backgroundColor = [UIColor greenColor];
@@ -57,8 +65,10 @@
     controller4.view.backgroundColor = [UIColor yellowColor];
     controller4.tabBarItem.title = @"文化";
 
-    [tabbarController setViewControllers:@[controller1, controller2, controller3, controller4]];
+//    [tabbarController setViewControllers:@[controller1, controller2, controller3, controller4]];
+    [tabbarController setViewControllers:@[navigationController, controller2, controller3, controller4]];
 
+    
     self.window.rootViewController = tabbarController;
     [self.window makeKeyAndVisible];
 
