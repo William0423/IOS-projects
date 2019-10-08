@@ -43,11 +43,11 @@
     
     // lesson 10 :
     ViewController *viewController = [[ViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+
 
 //    UIViewController *controller1 = [[UIViewController alloc] init];
-    navigationController.view.backgroundColor = [UIColor whiteColor];
-    navigationController.tabBarItem.title = @"经济";
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.tabBarItem.title = @"经济";
     
 //    UIViewController *controller1 = [[UIViewController alloc] init];
 //    controller1.view.backgroundColor = [UIColor redColor];
@@ -66,10 +66,11 @@
     controller4.tabBarItem.title = @"文化";
 
 //    [tabbarController setViewControllers:@[controller1, controller2, controller3, controller4]];
-    [tabbarController setViewControllers:@[navigationController, controller2, controller3, controller4]];
+    [tabbarController setViewControllers:@[viewController, controller2, controller3, controller4]];
 
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
     
-    self.window.rootViewController = tabbarController;
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 
 }
