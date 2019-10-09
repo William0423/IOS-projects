@@ -1,7 +1,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 
-@interface SceneDelegate ()
+@interface SceneDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -67,12 +67,19 @@
 
 //    [tabbarController setViewControllers:@[controller1, controller2, controller3, controller4]];
     [tabbarController setViewControllers:@[viewController, controller2, controller3, controller4]];
+    
+    tabbarController.delegate = self;
+    
 
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
     
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    NSLog(@"did select");
 }
 
 
