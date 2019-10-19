@@ -94,26 +94,31 @@
     // ====================
     
     // 07 lesson
-    TestView *view3 = [[TestView alloc] init];
-    view3.backgroundColor = [UIColor greenColor];
-    view3.frame = CGRectMake(150, 150, 100, 100);
-    [self.view addSubview:view3];
-    // =================
+//    TestView *view3 = [[TestView alloc] init];
+//    view3.backgroundColor = [UIColor greenColor];
+//    view3.frame = CGRectMake(150, 150, 100, 100);
+//    [self.view addSubview:view3];
+//    // =================
+//
+//    UITapGestureRecognizer *tagGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
+//    [view3 addGestureRecognizer:tagGesture];
     
-    UITapGestureRecognizer *tagGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
-    [view3 addGestureRecognizer:tagGesture];
+    self.view.backgroundColor = [UIColor whiteColor];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    
+    [self.view addSubview:tableView];
     
 }
 
-- (void)pushController{
-    
-    UIViewController *viewController = [[UIViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor whiteColor];
-    viewController.navigationItem.title = @"内容";
-    
-    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-}
+//- (void)pushController{
+//
+//    UIViewController *viewController = [[UIViewController alloc] init];
+//    viewController.view.backgroundColor = [UIColor whiteColor];
+//    viewController.navigationItem.title = @"内容";
+//
+//    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
+//
+//    [self.navigationController pushViewController:viewController animated:YES];
+//}
 
 @end
